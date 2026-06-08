@@ -1,0 +1,16 @@
+{
+  "serverUrl": "http://localhost:3029",
+  "projectId": "ymUKCYaiuzTq0cUcCgVA2",
+  "apiKeyRef": {
+    "kind": "env",
+    "name": "COZNT_API_KEY_YMUKCYAIUZTQ0CUCCGVA2"
+  },
+  "promptHook": {
+    "installed": false,
+    "version": null,
+    "editor": null
+  },
+  "mcp": {
+    "version": "0.1.1"
+  }
+}

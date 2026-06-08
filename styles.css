@@ -1,0 +1,196 @@
+:root {
+  color-scheme: dark;
+  --page: #161a20;
+  --panel: #232a33;
+  --panel-strong: #2c3540;
+  --surface: #343f4c;
+  --surface-hover: #3d4b5b;
+  --text: #f6f8fb;
+  --muted: #9ea9b8;
+  --accent: #14b8a6;
+  --accent-strong: #0f9485;
+  --warning: #f59e0b;
+  --danger: #f87171;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(20, 184, 166, 0.18), transparent 34rem),
+    linear-gradient(135deg, #161a20 0%, #20262d 45%, #171b20 100%);
+  color: var(--text);
+}
+
+button,
+output {
+  font: inherit;
+}
+
+.shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.calculator {
+  width: min(100%, 390px);
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: rgba(35, 42, 51, 0.92);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status {
+  color: var(--accent);
+  text-align: right;
+}
+
+.status.error {
+  color: var(--danger);
+}
+
+.display {
+  min-height: 124px;
+  display: grid;
+  align-content: end;
+  gap: 8px;
+  padding: 20px;
+  border-radius: 8px;
+  background: #11151a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.expression {
+  min-height: 24px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.value {
+  min-height: 56px;
+  display: block;
+  color: var(--text);
+  font-size: clamp(2.1rem, 12vw, 3.45rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.key {
+  min-width: 0;
+  min-height: 64px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1;
+  transition:
+    transform 120ms ease,
+    background-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.key:hover {
+  background: var(--surface-hover);
+}
+
+.key:active,
+.key.pressed {
+  transform: translateY(1px) scale(0.98);
+}
+
+.key:focus-visible {
+  outline: 3px solid rgba(20, 184, 166, 0.45);
+  outline-offset: 2px;
+}
+
+.utility {
+  background: var(--panel-strong);
+  color: #dbe4ef;
+}
+
+.operator {
+  background: #435066;
+  color: #dffcf8;
+}
+
+.equals {
+  background: var(--accent);
+  color: #06211e;
+}
+
+.equals:hover {
+  background: var(--accent-strong);
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+@media (max-width: 420px) {
+  .shell {
+    align-items: stretch;
+    padding: 12px;
+  }
+
+  .calculator {
+    width: 100%;
+    align-self: center;
+    padding: 14px;
+  }
+
+  .keypad {
+    gap: 8px;
+  }
+
+  .key {
+    min-height: 58px;
+    font-size: 1.05rem;
+  }
+}
