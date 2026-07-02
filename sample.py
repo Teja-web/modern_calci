@@ -1,3 +1,7 @@
 def function():
-  print("helo world")
 print(function())
+asdasd
+asd
+asd
+asd
+asda
