@@ -7,9 +7,7 @@ const state = {
   displayValue: "0",
   storedValue: null,
   operator: null,
-  waitingForNextValue: false,
-  error: false,
-};
+
 
 const operators = {
   add: { symbol: "+", calculate: (left, right) => left + right },
@@ -59,7 +57,7 @@ function inputDigit(digit) {
 function inputDecimal() {
   clearErrorIfNeeded();
 
-  if (state.waitingForNextValue) {
+  if (state.waitingForNextValue) 
     state.displayValue = "0.";
     state.waitingForNextValue = false;
     render();
@@ -142,7 +140,7 @@ function calculateResult() {
 
   if (!state.operator || state.storedValue === null || state.waitingForNextValue) {
     return;
-  }
+  
 
   const inputValue = Number.parseFloat(state.displayValue);
   const result = operators[state.operator].calculate(state.storedValue, inputValue);
