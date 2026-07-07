@@ -3,50 +3,142 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Modern Calculator</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
-    <main class="shell" aria-label="Modern calculator">
-      <section class="calculator" aria-label="Calculator">
-        <div class="brand-row">
-          <span>Modern Calculator</span>
-          <span class="status" id="status">Ready</span>
-        </div>
 
-        <div class="display" aria-live="polite">
+    <!-- Animated Background -->
+    <div class="background">
+      <span class="circle c1"></span>
+      <span class="circle c2"></span>
+      <span class="circle c3"></span>
+    </div>
+
+    <main class="shell">
+
+      <section class="calculator">
+
+        <!-- Header -->
+        <header class="calculator-header">
+
+          <div class="logo">
+            <i class="fa-solid fa-calculator"></i>
+            <div>
+              <h1>Modern Calculator</h1>
+              <p>Elegant • Fast • Responsive</p>
+            </div>
+          </div>
+
+          <div class="status-pill" id="status">
+            <i class="fa-solid fa-circle"></i>
+            Ready
+          </div>
+
+        </header>
+
+        <!-- Display -->
+        <section class="display" aria-live="polite">
+
           <div class="expression" id="expression">&nbsp;</div>
-          <output class="value" id="display">0</output>
-        </div>
 
-        <div class="keypad" aria-label="Calculator controls">
-          <button class="key utility" type="button" data-action="clear">AC</button>
-          <button class="key utility" type="button" data-action="backspace">DEL</button>
-          <button class="key utility" type="button" data-action="sign">+/-</button>
-          <button class="key operator" type="button" data-operator="divide">/</button>
+          <output class="value" id="display">
+            0
+          </output>
 
-          <button class="key" type="button" data-digit="7">7</button>
-          <button class="key" type="button" data-digit="8">8</button>
-          <button class="key" type="button" data-digit="9">9</button>
-          <button class="key operator" type="button" data-operator="multiply">x</button>
+        </section>
 
-          <button class="key" type="button" data-digit="4">4</button>
-          <button class="key" type="button" data-digit="5">5</button>
-          <button class="key" type="button" data-digit="6">6</button>
-          <button class="key operator" type="button" data-operator="subtract">-</button>
+        <!-- Keypad -->
+        <section class="keypad">
 
-          <button class="key" type="button" data-digit="1">1</button>
-          <button class="key" type="button" data-digit="2">2</button>
-          <button class="key" type="button" data-digit="3">3</button>
-          <button class="key operator" type="button" data-operator="add">+</button>
+          <!-- Row 1 -->
+          <button class="key utility" data-action="clear">
+            AC
+          </button>
 
-          <button class="key wide" type="button" data-digit="0">0</button>
-          <button class="key" type="button" data-action="decimal">.</button>
-          <button class="key equals" type="button" data-action="equals">=</button>
-        </div>
+          <button class="key utility" data-action="backspace">
+            <i class="fa-solid fa-delete-left"></i>
+          </button>
+
+          <button class="key utility" data-action="sign">
+            ±
+          </button>
+
+          <button class="key operator" data-operator="divide">
+            ÷
+          </button>
+
+          <!-- Row 2 -->
+          <button class="key" data-digit="7">7</button>
+          <button class="key" data-digit="8">8</button>
+          <button class="key" data-digit="9">9</button>
+
+          <button class="key operator" data-operator="multiply">
+            ×
+          </button>
+
+          <!-- Row 3 -->
+          <button class="key" data-digit="4">4</button>
+          <button class="key" data-digit="5">5</button>
+          <button class="key" data-digit="6">6</button>
+
+          <button class="key operator" data-operator="subtract">
+            −
+          </button>
+
+          <!-- Row 4 -->
+          <button class="key" data-digit="1">1</button>
+          <button class="key" data-digit="2">2</button>
+          <button class="key" data-digit="3">3</button>
+
+          <button class="key operator" data-operator="add">
+            +
+          </button>
+
+          <!-- Row 5 -->
+          <button class="key wide" data-digit="0">
+            0
+          </button>
+
+          <button class="key" data-action="decimal">
+            .
+          </button>
+
+          <button class="key equals" data-action="equals">
+            =
+          </button>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="calculator-footer">
+          <span>Keyboard Supported</span>
+          <span>•</span>
+          <span>Built with HTML • CSS • JavaScript</span>
+        </footer>
+
       </section>
+
     </main>
 
     <script src="script.js"></script>
+
   </body>
 </html>
