@@ -22,10 +22,7 @@ const operators = {
         return null;
       }
 
-      return left / right;
-    },
-  },
-};
+
 
 function resetState() {
   state.displayValue = "0";
@@ -50,11 +47,10 @@ function inputDigit(digit) {
     state.waitingForNextValue = false;
     render();
     return;
-  }
+ 
 
   state.displayValue = state.displayValue === "0" ? digit : state.displayValue + digit;
-  render();
-}
+
 
 function inputDecimal() {
   clearErrorIfNeeded();
@@ -77,8 +73,7 @@ function toggleSign() {
   clearErrorIfNeeded();
 
   if (state.displayValue === "0") {
-    return;
-  }
+ 
 
   state.displayValue = state.displayValue.startsWith("-")
     ? state.displayValue.slice(1)
@@ -90,8 +85,6 @@ function backspace() {
   clearErrorIfNeeded();
 
   if (state.waitingForNextValue) {
-    return;
-  }
 
   const nextValue = state.displayValue.slice(0, -1);
   state.displayValue = nextValue && nextValue !== "-" ? nextValue : "0";
