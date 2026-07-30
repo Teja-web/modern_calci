@@ -4,5 +4,5 @@ print(function())
 
 
 
-def print():
-  print("kk")
+def msg():
+  print("hello world")
